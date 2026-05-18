@@ -1,1 +1,163 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+body {
+  color-scheme: light;
+
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  font-family: var(--mat-sys-plain-font-family, Roboto), sans-serif;
+  letter-spacing: 0.1ch;
+
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* Preview: https://themes.angular-material.dev/?bold-font-weight=700&brand-font-family=Roboto&medium-font-weight=500&plain-font-family=Roboto&regular-font-weight=400&seed-error=%23ffb4ab&seed-neutral=%23757877&seed-neutral-variant=%236f7978&seed-primary=%23a2e3e1&seed-secondary=%23b2cbca&seed-tertiary=%23c9c1ed */
+/* Seed Colors: primary: #a2e3e1, secondary: #b2cbca, tertiary: #c9c1ed, error: #ffb4ab, neutral: #757877, neutral-variant: #6f7978 */
+/* Seed Typography: plain-font-family: Roboto, brand-font-family: Roboto, bold-font-weight: 700, medium-font-weight: 500, regular-font-weight: 400 */
+
+:root,
+:host {
+  /* Typography */
+  --mat-sys-brand-font-family: Roboto;
+  --mat-sys-plain-font-family: Roboto;
+  --mat-sys-bold-font-weight: 700;
+  --mat-sys-medium-font-weight: 500;
+  --mat-sys-regular-font-weight: 400;
+
+  @include mat.theme-overrides(
+    (
+      brand-family: Roboto,
+      plain-family: Roboto,
+      bold-weight: 700,
+      medium-weight: 500,
+      regular-weight: 400,
+    )
+  );
+
+  /* Light Theme */
+  @include mat.theme-overrides(
+    (
+      primary: #246867,
+      on-primary: #ffffff,
+      primary-container: #adeeec,
+      on-primary-container: #00201f,
+      inverse-primary: #91d2d0,
+      primary-fixed: #adeeec,
+      primary-fixed-dim: #91d2d0,
+      on-primary-fixed: #00201f,
+      on-primary-fixed-variant: #00504f,
+      secondary: #4b6362,
+      on-secondary: #ffffff,
+      secondary-container: #cee8e6,
+      on-secondary-container: #071f1f,
+      secondary-fixed: #cee8e6,
+      secondary-fixed-dim: #b2cbca,
+      on-secondary-fixed: #071f1f,
+      on-secondary-fixed-variant: #344b4a,
+      tertiary: #605a80,
+      on-tertiary: #ffffff,
+      tertiary-container: #e5deff,
+      on-tertiary-container: #1c1639,
+      tertiary-fixed: #e5deff,
+      tertiary-fixed-dim: #c9c1ed,
+      on-tertiary-fixed: #1c1639,
+      on-tertiary-fixed-variant: #484267,
+      background: #fcf8f8,
+      on-background: #1c1b1b,
+      surface: #fcf8f8,
+      surface-dim: #dcd9d8,
+      surface-bright: #fcf8f8,
+      surface-container-lowest: #ffffff,
+      surface-container-low: #f6f3f2,
+      surface-container: #f1edec,
+      surface-container-high: #ebe7e7,
+      surface-container-highest: #e5e2e1,
+      on-surface: #1c1b1b,
+      shadow: #000000,
+      scrim: #000000,
+      surface-tint: #5c5f5e,
+      inverse-surface: #313030,
+      inverse-on-surface: #f3f0ef,
+      outline: #747877,
+      outline-variant: #c3c7c6,
+      neutral: #787776,
+      neutral10: #1c1b1b,
+      error: #ba1a1a,
+      error-container: #ffdad6,
+      on-error: #ffffff,
+      on-error-container: #410002,
+      surface-variant: #dfe3e2,
+      on-surface-variant: #434847,
+      neutral-variant: #737877,
+      neutral-variant20: #2c3131,
+      inverse-secondary: #b2cbca,
+      inverse-tertiary: #c9c1ed,
+    )
+  );
+}
+
+/* Dark Theme */
+.dark {
+  @include mat.theme-overrides(
+    (
+      primary: #91d2d0,
+      on-primary: #003736,
+      primary-container: #00504f,
+      on-primary-container: #adeeec,
+      inverse-primary: #246867,
+      primary-fixed: #adeeec,
+      primary-fixed-dim: #91d2d0,
+      on-primary-fixed: #00201f,
+      on-primary-fixed-variant: #00504f,
+      secondary: #b2cbca,
+      on-secondary: #1e3434,
+      secondary-container: #344b4a,
+      on-secondary-container: #cee8e6,
+      secondary-fixed: #cee8e6,
+      secondary-fixed-dim: #b2cbca,
+      on-secondary-fixed: #071f1f,
+      on-secondary-fixed-variant: #344b4a,
+      tertiary: #c9c1ed,
+      on-tertiary: #312c4f,
+      tertiary-container: #484267,
+      on-tertiary-container: #e5deff,
+      tertiary-fixed: #e5deff,
+      tertiary-fixed-dim: #c9c1ed,
+      on-tertiary-fixed: #1c1639,
+      on-tertiary-fixed-variant: #484267,
+      background: #131313,
+      on-background: #e5e2e1,
+      surface: #131313,
+      surface-dim: #131313,
+      surface-bright: #3a3939,
+      surface-container-lowest: #0e0e0e,
+      surface-container-low: #1c1b1b,
+      surface-container: #201f1f,
+      surface-container-high: #2a2a2a,
+      surface-container-highest: #353534,
+      on-surface: #e5e2e1,
+      shadow: #000000,
+      scrim: #000000,
+      surface-tint: #c5c7c6,
+      inverse-surface: #e5e2e1,
+      inverse-on-surface: #313030,
+      outline: #8d9190,
+      outline-variant: #434847,
+      neutral: #787776,
+      neutral10: #1c1b1b,
+      error: #ffb4ab,
+      error-container: #93000a,
+      on-error: #690005,
+      on-error-container: #ffdad6,
+      surface-variant: #434847,
+      on-surface-variant: #c3c7c6,
+      neutral-variant: #737877,
+      neutral-variant20: #2c3131,
+      inverse-secondary: #4b6362,
+      inverse-tertiary: #605a80,
+    )
+  );
+}
