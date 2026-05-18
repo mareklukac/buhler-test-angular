@@ -1,12 +1,13 @@
 import { DatePipe } from '@angular/common';
 import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-header',
-  imports: [DatePipe, MatIconModule, MatButtonModule, MatTooltipModule],
+  imports: [DatePipe, RouterLink, MatIconModule, MatButtonModule, MatTooltipModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

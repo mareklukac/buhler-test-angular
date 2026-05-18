@@ -1,0 +1,19 @@
+@if (machine(); as machine) {
+  <div class="detail">
+    <h2 class="title">{{ machine.name }}</h2>
+    <span class="state" [class]="machine.state">{{ machine.state }}</span>
+    <ul class="log-list">
+      @if (machine.log.length === 0) {
+        <p>No log entries available.</p>
+      }
+      @for (entry of machine.log; track entry.date) {
+        <li class="log-entry" [class]="machine.state">
+          <span class="date">{{ entry.date }}</span>
+          <span class="message">{{ entry.message }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+} @else {
+  <p>Machine not found.</p>
+}

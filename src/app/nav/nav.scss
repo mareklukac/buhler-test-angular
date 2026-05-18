@@ -12,6 +12,7 @@
     align-items: center;
     padding: 1em 2em;
     color: var(--mat-sys-on-primary-container);
+    text-decoration: none;
 
     &.running {
       background-color: var(--mat-sys-primary-container);
@@ -26,6 +27,10 @@
     &.alarm {
       background-color: var(--mat-sys-error);
       color: var(--mat-sys-on-error);
+    }
+
+    &.active {
+      border-bottom: 3px solid var(--mat-sys-on-surface);
     }
 
     .state_icon {

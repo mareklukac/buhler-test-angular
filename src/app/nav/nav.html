@@ -1,5 +1,10 @@
 @for (machine of machines(); track machine.name) {
-  <div class="item" [class]="machine.state">
+  <a
+    class="item"
+    [class]="machine.state"
+    [routerLink]="['/machine', machine.name.toLowerCase()]"
+    routerLinkActive="active"
+  >
     <span>{{ machine.name }}</span>
     <mat-icon class="state_icon" [class]="machine.state">{{
       machine.state === 'running'
@@ -8,5 +13,5 @@
           ? 'warning'
           : 'error'
     }}</mat-icon>
-  </div>
+  </a>
 }
