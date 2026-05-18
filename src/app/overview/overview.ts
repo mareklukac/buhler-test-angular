@@ -10,5 +10,5 @@ import { MachineService } from '../shared/machine.service';
 })
 export class Overview {
   private machineService = inject(MachineService);
-  readonly machines = this.machineService.machines.value;
+  readonly machines = this.machineService.machines;
 }

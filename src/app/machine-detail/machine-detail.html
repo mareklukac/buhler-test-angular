@@ -2,6 +2,10 @@
   <div class="detail">
     <h2 class="title">{{ machine.name }}</h2>
     <span class="state" [class]="machine.state">{{ machine.state }}</span>
+    <button class="reboot_button" (click)="reboot()" [disabled]="machine.state === 'running'">
+      <mat-icon>restart_alt</mat-icon>
+      <span>Reboot</span>
+    </button>
     <ul class="log-list">
       @if (machine.log.length === 0) {
         <p>No log entries available.</p>

@@ -2,11 +2,13 @@ import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MachineService } from '../shared/machine.service';
 
 @Component({
   selector: 'app-machine-detail',
-  imports: [],
+  imports: [MatButtonModule, MatIconModule],
   templateUrl: './machine-detail.html',
   styleUrl: './machine-detail.scss',
 })
@@ -18,6 +20,11 @@ export class MachineDetail {
 
   machine = computed(() => {
     const name = this.name();
-    return this.machineService.machines.value()?.find((m) => m.name.toLowerCase() === name);
+    return this.machineService.machines()?.find((m) => m.name.toLowerCase() === name);
   });
+
+  reboot(): void {
+    const name = this.name();
+    if (name) this.machineService.reboot(name);
+  }
 }
