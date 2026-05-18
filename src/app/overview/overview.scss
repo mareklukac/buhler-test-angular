@@ -6,6 +6,13 @@
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
+    height: auto;
+    padding: 2em 1em;
+    gap: 2em;
+  }
+
   .item {
     display: flex;
     flex-direction: column;
@@ -38,6 +45,14 @@
       width: 3em;
       height: 5px;
       background-color: var(--mat-sys-primary);
+
+      @media (max-width: 600px) {
+        top: 100%;
+        left: 50%;
+        width: 5px;
+        height: 2em;
+        transform: translateX(-50%);
+      }
     }
 
     .state_icon {

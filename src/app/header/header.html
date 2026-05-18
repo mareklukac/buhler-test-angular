@@ -1,22 +1,23 @@
 <header>
   <div class="menu_left">
-    <a routerLink="/"><img src="buhler_logo.png" alt="Logo" /></a>
+    <a routerLink="/" class="link">
+      <img src="buhler_logo.png" alt="Logo" />
+    </a>
   </div>
   <div class="menu_right">
-    <span
+    <mat-icon
       [matTooltip]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
       class="theme-toggle"
       (click)="toggleTheme()"
+      >{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon
     >
-      <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
-    </span>
-    <p>
+    <p class="hide-mobile">
       <span><mat-icon>access_time</mat-icon></span>
       <span>{{ time() | date: 'dd.MM.yyyy HH:mm' }}</span>
     </p>
     <p>
       <span><mat-icon>account_circle</mat-icon></span>
-      <span>Operator</span>
+      <span class="hide-mobile">Operator</span>
     </p>
   </div>
 </header>
