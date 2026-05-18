@@ -20,17 +20,24 @@ export class MachineService {
     });
   }
 
-  private randomState(): MachineState {
+  private randomState(currentState: MachineState): MachineState {
     const random = Math.random();
-    if (random < 0.5) return 'running';
-    if (random < 0.8) return 'warning';
-    return 'alarm';
+    switch (currentState) {
+      case 'running':
+        if (random < 0.5) return 'running';
+        if (random < 0.8) return 'warning';
+        return 'alarm';
+      case 'warning':
+        return random < 0.5 ? 'warning' : 'alarm';
+      case 'alarm':
+        return 'alarm';
+    }
   }
 
   private startSimulation(): void {
     const interval = setInterval(() => {
       this.machines.update((machines) =>
-        machines.map((m) => ({ ...m, state: this.randomState() })),
+        machines.map((m) => ({ ...m, state: this.randomState(m.state) })),
       );
     }, 60000);
 
