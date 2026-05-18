@@ -3,6 +3,13 @@
     <img src="buhler_logo.png" alt="Logo" />
   </div>
   <div class="menu_right">
+    <span
+      [matTooltip]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+      class="theme-toggle"
+      (click)="toggleTheme()"
+    >
+      <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </span>
     <p>
       <span><mat-icon>access_time</mat-icon></span>
       <span>{{ time() | date: 'dd.MM.yyyy HH:mm' }}</span>

@@ -19,6 +19,18 @@ header {
     gap: 3em;
     align-items: center;
 
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--mat-sys-on-secondary-container);
+      font-size: 1em;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--mat-sys-primary);
+      }
+    }
+
     p {
       font-size: 1.25em;
       line-height: 0.7em;
