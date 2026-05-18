@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mat-sys-primary-container);
+
+  .item {
+    font-size: 1.25em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 1em 2em;
+    color: var(--mat-sys-on-primary-container);
+
+    &:hover {
+      background-color: var(--mat-sys-primary);
+      color: var(--mat-sys-on-primary);
+    }
+  }
+  :nth-child(even) {
+    background-color: red;
+  }
+}
