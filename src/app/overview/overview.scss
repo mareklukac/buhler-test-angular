@@ -14,16 +14,49 @@
     width: 150px;
     height: 150px;
     position: relative;
-    background-color: var(--mat-sys-primary-container);
 
-    &:not(.last)::after {
+    &.running {
+      background-color: var(--mat-sys-primary-container);
+      color: var(--mat-sys-on-primary-container);
+    }
+
+    &.warning {
+      background-color: var(--mat-sys-tertiary);
+      color: var(--mat-sys-on-tertiary);
+    }
+
+    &.alarm {
+      background-color: var(--mat-sys-error);
+      color: var(--mat-sys-on-error);
+    }
+
+    &:not(:last-child)::after {
       content: '';
       position: absolute;
       top: 50%;
       left: 100%;
       width: 3em;
-      height: 2px;
-      background-color: var(--mat-sys-primary-container);
+      height: 5px;
+      background-color: var(--mat-sys-primary);
+    }
+
+    .state_icon {
+      position: absolute;
+      top: 10%;
+      left: 70%;
+      color: var(--mat-sys-on-primary-container);
+
+      &.running {
+        color: var(--mat-sys-on-primary-container);
+      }
+
+      &.warning {
+        color: var(--mat-sys-on-tertiary);
+      }
+
+      &.alarm {
+        color: var(--mat-sys-on-error);
+      }
     }
   }
 }

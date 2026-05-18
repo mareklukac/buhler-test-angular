@@ -1,4 +1,12 @@
-<span class="item">Scale</span>
-<span class="item">Attacher</span>
-<span class="item">Packer</span>
-<span class="item">Closer</span>
+@for (machine of machines(); track machine.name) {
+  <div class="item" [class]="machine.state">
+    <span>{{ machine.name }}</span>
+    <mat-icon class="state_icon" [class]="machine.state">{{
+      machine.state === 'running'
+        ? 'check_circle'
+        : machine.state === 'warning'
+          ? 'warning'
+          : 'error'
+    }}</mat-icon>
+  </div>
+}

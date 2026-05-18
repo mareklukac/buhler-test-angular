@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--mat-sys-primary-container);
+  background-color: var(--mat-sys-secondary-container);
 
   .item {
+    position: relative;
     font-size: 1.25em;
     font-weight: 500;
     display: flex;
@@ -12,12 +13,38 @@
     padding: 1em 2em;
     color: var(--mat-sys-on-primary-container);
 
-    &:hover {
-      background-color: var(--mat-sys-primary);
-      color: var(--mat-sys-on-primary);
+    &.running {
+      background-color: var(--mat-sys-primary-container);
+      color: var(--mat-sys-on-primary-container);
     }
-  }
-  :nth-child(even) {
-    background-color: red;
+
+    &.warning {
+      background-color: var(--mat-sys-tertiary);
+      color: var(--mat-sys-on-tertiary);
+    }
+
+    &.alarm {
+      background-color: var(--mat-sys-error);
+      color: var(--mat-sys-on-error);
+    }
+
+    .state_icon {
+      position: absolute;
+      top: 10%;
+      left: 80%;
+      color: var(--mat-sys-on-primary-container);
+
+      &.running {
+        color: var(--mat-sys-on-primary-container);
+      }
+
+      &.warning {
+        color: var(--mat-sys-on-tertiary);
+      }
+
+      &.alarm {
+        color: var(--mat-sys-on-error);
+      }
+    }
   }
 }

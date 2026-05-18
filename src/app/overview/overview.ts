@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MachineService } from '../shared/machine.service';
 
 @Component({
   selector: 'app-overview',
@@ -7,4 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './overview.html',
   styleUrl: './overview.scss',
 })
-export class Overview {}
+export class Overview {
+  private machineService = inject(MachineService);
+  readonly machines = this.machineService.machines.value;
+}
