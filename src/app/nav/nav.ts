@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MachineService } from '../shared/machine.service';
@@ -8,6 +8,7 @@ import { MachineService } from '../shared/machine.service';
   imports: [RouterLink, RouterLinkActive, MatIconModule],
   templateUrl: './nav.html',
   styleUrl: './nav.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Nav {
   private machineService = inject(MachineService);
