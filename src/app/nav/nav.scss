@@ -23,42 +23,12 @@
     color: var(--mat-sys-on-primary-container);
     text-decoration: none;
 
-    &.running {
-      background-color: var(--mat-sys-primary-container);
-      color: var(--mat-sys-on-primary-container);
-    }
-
-    &.warning {
-      background-color: var(--mat-sys-tertiary);
-      color: var(--mat-sys-on-tertiary);
-    }
-
-    &.alarm {
-      background-color: var(--mat-sys-error);
-      color: var(--mat-sys-on-error);
-    }
-
     &.active {
       border-bottom: 3px solid var(--mat-sys-on-surface);
     }
 
     .state_icon {
-      position: absolute;
-      top: 10%;
       left: 80%;
-      color: var(--mat-sys-on-primary-container);
-
-      &.running {
-        color: var(--mat-sys-on-primary-container);
-      }
-
-      &.warning {
-        color: var(--mat-sys-on-tertiary);
-      }
-
-      &.alarm {
-        color: var(--mat-sys-on-error);
-      }
     }
   }
 }

@@ -16,21 +16,6 @@
     font-size: 0.85rem;
     font-weight: 500;
     text-transform: capitalize;
-
-    &.running {
-      background-color: var(--mat-sys-primary-container);
-      color: var(--mat-sys-on-primary-container);
-    }
-
-    &.warning {
-      background-color: var(--mat-sys-tertiary-container);
-      color: var(--mat-sys-on-tertiary-container);
-    }
-
-    &.alarm {
-      background-color: var(--mat-sys-error-container);
-      color: var(--mat-sys-on-error-container);
-    }
   }
 
   .reboot_button {
